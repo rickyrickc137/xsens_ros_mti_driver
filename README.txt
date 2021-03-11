@@ -4,16 +4,12 @@ Documentation:
     You can find the full documentation in "<your MT SDK directory>/doc/xsensdeviceapi/doc/html/index.html" under "ROS MTi driver" section.
 
 Prerequisites:
-    - ROS Kinetic or Melodic
+    - ROS Kinetic, Melodic or Noetic
     - C/C++ Compiler: GCC 5.4.0 or MSVC 14.0
     - C++11
 
 Building:
-    - Copy xsens_ros_mti_driver folder from your MT SDK directory into your catkin workspace 'src' folder.
-        Make sure the permissions are set to o+rw on your files and directories.
-
-    - Build xspublic from your catkin workspace:
-        $ pushd src/xsens_ros_mti_driver/lib/xspublic && make && popd
+    - Copy xsens_ros_mti_driver folder into your catkin workspace 'src' folder.
 
     - Build Xsens MTi driver package:
         $ catkin_make
@@ -63,15 +59,6 @@ Notes:
         Work-around: for accurate and stable time stamp information, users can make use of the sensor reported time stamp (/imu/time_ref) instead.
 
 -[ Troubleshooting ]------------------------------------------------------------
-
-    - The Mti1 (Motion Tracker Development Board) is not recognized.
-
-        Support for the Development Board is present in recent kernels. (Since June 12, 2015).
-        If your kernel does not support the Board, you can add this manually
-
-        $ sudo /sbin/modprobe ftdi_sio
-        $ echo 2639 0300 | sudo tee /sys/bus/usb-serial/drivers/ftdi_sio/new_id
-
 
     - The device is recognized, but I cannot ever access the device -
 
